@@ -4,11 +4,10 @@
 
 const producto = "Audifonos gamer"; //inciar varibles y asignarle el valor
 
-const disponible = true; //solo declararla sin valor
+// const disponible; //solo declararla sin valor
 
-producto = true; //reasignando el valor de la variable
 
-disponible = true; //se asigna el valor 
+// disponible = true; //se asigna el valor 
 const producto1 = "computadora",
     disponible1 = true,
     categoria = "Computadora"; //no pueden inciar con numeros - 
