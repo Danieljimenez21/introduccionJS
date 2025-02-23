@@ -5,6 +5,8 @@ const producto = {
     disponible: true
 }
 
+
+
 const medidas = {
     peso: "1kg",
     medida:"30cm"
