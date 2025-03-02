@@ -22,13 +22,28 @@ const carrito = [
     {nombre: 'Laptop', precio: 800}
 ];
 
+console.log(`ejecucion del bucle for: `)
+
 for (let i = 0; i < carrito.length; i++){
     console.log(carrito[i].nombre);
 }
 
-
-
+console.log(`ejecucion del while loop: `)
 //while loop
+let x = 0; //Indice o valor inicial
 
+while(x < carrito.length){ //condicion
+    console.log(carrito[x].precio);
+    x++;//incremento
+}
+
+console.log("bloque de ejecucion del bucle do while: ")
 
 //do while loop
+
+let i = 100;
+
+do {
+    console.log(i);
+    i++;
+} while(i < 10); 
