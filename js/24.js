@@ -47,3 +47,20 @@ do {
     console.log(i);
     i++;
 } while(i < 10); 
+
+let a = 1;
+
+while(a <= 10){
+    console.log(a);
+    a++;
+}
+
+
+
+let b = 500;
+do{
+    console.log("Desde el bucle do while")
+    console.log(b)
+    b++;
+}while(b<20);
+
