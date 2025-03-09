@@ -10,11 +10,25 @@ function descargarNuevosClientes() {
     });
 }
 
+function descargarUltmosPedidos() {
+    return new Promise ( resolve => {
+            console.log("Descargando pedidos... espere...");
+        setTimeout( () => {
+            resolve("Los pedidos han sido descargados.. ")
+        }, 3000);
+        
+    });
+}
+
 async function app() {
     try {
-        const resultado = await descargarNuevosClientes();
-        console.log("Este codigo se bloquea");
-        console.log(resultado);
+        // const clientes = await descargarNuevosClientes();
+        // const pedidos = await descargarUltmosPedidos();
+        // console.log(clientes);
+        // console.log(pedidos);
+        const resultado = await Promise.all([ descargarNuevosClientes(), descargarUltmosPedidos()]);
+        console.log(resultado[0]);
+        console.log(resultado[1]);
     } catch (error) {
         console.log(error);
     }
@@ -22,36 +36,3 @@ async function app() {
 
 app();
 
-function comprarProducto(productoEnStock) {
-    return new Promise((resolve, reject) => {
-        console.log("procesando compra...");
-
-        setTimeout( () => {
-            if (productoEnStock){
-                resolve("Compra realizada con éxito.");
-            } else {
-                reject("Lo sentimos, el producto esta agotado.")
-            }
-        }, 2000);
-    });
-}
-
-//consumir la promesa con .then y .catch()
-
-comprarProducto(false)
-    .then( mensaje => console.log(mensaje))
-    .catch( error => console.log(error));
-
-
-//usando async y await
-
-async function realizarCompra() {
-    try {
-        let mensaje = await comprarProducto(false);
-        console.log(mensaje)
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-realizarCompra();
